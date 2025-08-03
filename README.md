@@ -1,7 +1,9 @@
 # Advance JavaScript
 ##Table Of Contents
-[foreach](#foreach)
-[Map](#amp)
+- [foreach](#foreach)
+- [Map](#amp)
+- [Filter](#Filter)
+- [polymorphism](#polymorphism)
 
 
 
