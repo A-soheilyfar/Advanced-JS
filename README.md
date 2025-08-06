@@ -54,12 +54,13 @@ numbers.forEach(function(item, index) {
 * خود آرایه‌ای که forEach روی آن صدا زده شده.
 
 ```javascript
-[10, 20].forEach(function(item, index, arr) {
-  console.log("مقدار:", item, "، کل آرایه:", arr);
-});
-// خروجی:
-// مقدار: 10 ، کل آرایه: 10,20
-// مقدار: 20 ، کل آرایه: 10,20
+const numbers = [10, 20];
+numbers.forEach((item, index, arr) =>
+  console.log("index:", index, " value:", item, "  Array:", arr)
+);
+
+//index: 0  value: 10   Array: [ 10, 20 ]
+//index: 1  value: 20   Array: [ 10, 20 ]
 
 ```
 
