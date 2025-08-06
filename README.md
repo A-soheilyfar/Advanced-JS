@@ -72,9 +72,11 @@ const fruits = ["apple", "banana", "cherry"];
 fruits.forEach(function (fruit) {
   console.log(fruit);
 });
-// 1 0
-// 2 1
-// 3 2
+
+// apple
+//banana
+//cherry
+
   ```
 
  * استفاده از Arrow Function
@@ -121,9 +123,9 @@ prices.forEach(price => {
   total += price;
 });
 
-console.log('جمع کل:', total);
+console.log('Total:', total);
 
-
+//Total: 60
 ```
 
 `forEach:` فقط برای اجرا کردن کاری روی هر عنصره. چیزی برنمی‌گردونه.
