@@ -129,6 +129,16 @@ console.log('Total:', total);
 //Total: 60
 ```
 
+```javascript
+array = [1, 2, 3];
+array.forEach((item, index) => (array[index] = item * -1));
+console.log(array);
+
+//[-1,-2,-3]
+
+```
+
+
 `forEach:` فقط برای اجرا کردن کاری روی هر عنصره. چیزی برنمی‌گردونه.
 
 `map:` یه آرایه جدید می‌سازه.
@@ -137,6 +147,7 @@ console.log('Total:', total);
 const doubled = prices.map(p => p * 2); // برمی‌گردونه  
 prices.forEach(p => p * 2); // چیزی برنمی‌گردونه
 ```
+
 ### 🎯 جمع بندی
 
 * forEach خیلی برای کارهای ساده روی آرایه‌ها مفیده
