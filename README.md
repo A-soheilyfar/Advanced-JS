@@ -159,4 +159,6 @@ prices.forEach(p => p * 2); // چیزی برنمی‌گردونه
 * از Arrow function می‌تونی استفاده کنی.
 
 
+🔵 Reduce
+
 
