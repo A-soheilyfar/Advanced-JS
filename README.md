@@ -314,14 +314,39 @@ const activeUsers = users.filter(user => user.active);
 console.log(activeUsers);
 // [ { name: 'Ali', active: true }, { name: 'Omid', active: true } ]
 
+```
+
+
+* تفاوت با map
+
+<div dir="rtl">
+map() همه عناصر رو می‌گردونه ولی تغییرشون میده، filter() بعضی‌ها رو برمی‌داره و بقیه رو حذف می‌کنه.
+</div>
+
+```javascript
+const nums = [1, 2, 3, 4];
+const doubled = nums.map(n => n * 2); // [2, 4, 6, 8]
+const evens = nums.filter(n => n % 2 === 0); // [2, 4]
 
 ```
+ Chain کردن
+ <div dir="rtl">
+ میشه filter() رو با متدهای دیگه زنجیره کرد، مثل map یا sort
+ </div>
+
+ ```javascript
+const result = [1, 2, 3, 4, 5]
+  .filter(n => n > 2)
+  .map(n => n * 10);
+
+console.log(result); // [30, 40, 50]
+```
+ <div dir="rtl">
+filter() آرایهٔ اصلی رو تغییر نمی‌ده، فقط یک آرایهٔ جدید برمی‌گردونه. ولی فنی میشه از پارامتر سوم برای تغییر آرایه استفاده کرد — که ضدالگو هست و نباید انجامش داد
+   <br><br>
+   پس خلاصه: وقتی می‌خوای بخشی از داده‌ها رو بر اساس یک شرط نگه داری، از filter() استفاده کن. آرایهٔ اصلی رو دست نمی‌زنه، فقط یه آرایهٔ جدید با داده‌های فیلترشده بهت میده.
+ </div>
+
 ---
 ## 🔵 Reduce
-
-
-
-
-
-
 
