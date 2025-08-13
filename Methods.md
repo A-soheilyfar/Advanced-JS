@@ -480,3 +480,42 @@ arr.slice(1, -1); // [20, 30, 40]
 arr.slice(4, 2); // []
 
 ```
+<br>
+<br>
+
+** استفاده‌های رایج
+
+
+
+کپی کامل آرایه
+
+```javascript
+const copy = arr.slice();
+```
+
+حذف عناصر بدون تغییر آرایه اصلی
+```javascript
+const firstTwo = arr.slice(0, 2);
+
+```
+ ساخت Substring از رشته
+slice() روی string هم کار می‌کنه:
+
+```javascript
+const str = "JavaScript";
+console.log(str.slice(4, 10)); // "Script"
+```
+
+---
+## 🔵 Splice
+<div dir="rtl">
+`splice()` یک متد آرایه در جاوااسکریپت هست که آرایه اصلی رو تغییر می‌ده (mutable) و می‌تونه:
+</div>
+
+آیتم‌هایی رو حذف کنه
+
+آیتم‌های جدید رو اضافه کنه
+
+یا هر دو رو با هم انجام بده
+
+
