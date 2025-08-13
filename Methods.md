@@ -1,11 +1,12 @@
-# Advance JavaScript
-## Table Of Contents
+##Methods
+### Table Of Contents
+
 
 - [foreach](#-foreach)
 - [Map](#-map)
 - [Filter](#-filter)
 - [Reduce](#-reduce)
-- [polymorphism](#polymorphism)
+- [Slice](#-slice)
 
 
 
