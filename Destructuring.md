@@ -65,18 +65,29 @@ console.log(t);
 
 دقت کنید که نام متغیر جدید با نام کلید هر ویژگی آبجکت یکسان باشه
 
-// Example 2
-// const [a, b] = ["Raha", "Abolfazl"];
-// console.log(a);
+Example 2
+```javascript
+const { a, b } = { a: "Raha", b: "Abolfazl" };
+console.log(a);
 
-// Example 3
-// const { x, y, ...noob } = {
-//   x: "Raha",
-//   y: "Abolfazl",
-//   t: "shahriar",
-//   s: "taranom",
-// };
-// console.log(noob);
+//Output: Raha
+```
+
+Example 3
+```javascript
+
+const { x, y, ...children } = {
+  x: "Raha",
+  y: "Abolfazl",
+  t: "Shahriar",
+  s: "Taranom",
+  z: "Toranj",
+};
+console.log(children);
+
+//Output:
+//{ t: 'Shahriar', s: 'Taranom', z: 'Toranj' }
+```
 
 // Example 4
 // const { kind, beutiful } = { kind: true, beutiful: true };
