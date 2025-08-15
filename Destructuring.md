@@ -1,3 +1,10 @@
+# Destructuring
+یک عبارت (expresion) جاوا اسکریپته که امکان تجزیه مقادیر از آرایه‌ها یا ویژگی‌های اشیاء (Object) را به متغیرهای مجزا فراهم می‌کند.
+داده‌ها را می‌توان از آرایه‌ها، اشیاء و اشیاء تو در تو (Nested Objects) استخراج کرد و به متغیرها اختصاص داد.
+
+
+### Array Destructuring
+
 Example 1
 ```javascript
 const arr = ["A", "B", "C", "D"];
@@ -46,8 +53,8 @@ console.log(short);
 //Aboozar
 ```
 
-//Object_Destructing
-// Example 1
+### Object_Destructing
+Example 1
 // let myob = { x: 21, y: 40, t: 50 };
 // const { x, y, t } = myob;
 // console.log(t);
