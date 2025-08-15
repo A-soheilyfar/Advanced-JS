@@ -3,8 +3,11 @@
 داده‌ها را می‌توان از آرایه‌ها، اشیاء و اشیاء تو در تو (Nested Objects) استخراج کرد و به متغیرها اختصاص داد.
 
 
-### Array Destructuring
+## Array Destructuring
 اعضای آرایه را می‌توان در متغیرهای مختلف باز (Unpack) کرد. در ادامه مثال‌های مختلفی براتون میارم تا به خوبی مبحث رو یادبگیرید
+<br>
+
+
 
 Example 1
 ```javascript
@@ -54,7 +57,7 @@ console.log(short);
 //Aboozar
 ```
 
-### Object_Destructing
+## Object Destructing
 تجزیه ساده شیء: در مثال زیر، ویژگی‌ها (و مقادیر آنها) از یک شیء (Object) به متغیرها اختصاص داده می‌شوند.
 Example 1
 ```javascript
@@ -92,40 +95,55 @@ console.log(children);
 //{ t: 'Shahriar', s: 'Taranom', z: 'Toranj' }
 ```
 
-// Example 4
-// const { kind, beutiful } = { kind: true, beutiful: true };
-// console.log(beutiful);
+Example 4
+```javascript
+const { kind, beautiful } = { kind: false, beautiful: true };
+console.log(beautiful);
 
-// Example 5
-// const {person: { name, age }} = { person: { name: "abolfazl", age: 26 } };
-// console.log(name);
+Output: true
+```
+
+
+Example 5
+```javascript
+const {
+  person: { name, age },
+} = { person: { name: "Abolfazl", age: 26 } };
+console.log(name); //Abolfazl
+console.log(person); // person is not defined
+
+```
 
 // Example 6
-// const {
-//   person,
-//   person: { tt, age },
-// } = { person: { tt: "abolfazl", age: 26 } };
+```javascript
+const {
+  person,
+  person: { username, age },
+} = { person: { username: "Abolfazl", age: 26 } };
 
-// console.log(person); // { name: "abolfazl", age: 26 }
-// console.log(tt); // "abolfazl"
+console.log(person); //{ username: 'Abolfazl', age: 26 }
+console.log(username); //Abolfazl
+```
+Example 7
+```javascriptconst people = {
+  man: { name: "Abolfazl", age: 26 },
+  woman: { name: "Raha", age: 25 },
+};
 
-// Example 7
-// const people = {
-//   man: { name: "Abolfazl", age: 26 },
-//   woman: { name: "Raha", age: 25 },
-// };
+const {
+  man,
+  man: { name: manName, age: manAge },
+  woman,
+  woman: { name: womanName, age: womanAge },
+} = people;
 
+console.log(woman); //{ name: 'Raha', age: 25 }
+console.log(man); //{ name: 'Abolfazl', age: 26 }
+console.log(manName); // Abolfazl
+console.log(womanAge); // 25
+
+```
 // Example 8
-// const {
-//   man,
-//   man: { name: manName, age: manAge },
-//   woman,
-//   woman: { name: womanName, age: womanage },
-// } = people;
-
-// console.log(woman);
-
-// Example 9
 // let obj = {
 //   name: "GFG",
 //   add: {
@@ -167,7 +185,7 @@ console.log(children);
 // } = obj;
 // console.log(ef);
 
-//Example 10
+//Example 9
 
 const person = {
   name: "Abolfazl",
