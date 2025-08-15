@@ -8,21 +8,21 @@
 Example 1
 ```javascript
 const arr = ["A", "B", "C", "D"];
-const [first, second, , forth] = arr;
+const [first, second, , fourth] = arr;
 
-console.log(first, forth, second);
+console.log(first, fourth, second);
 //output
 //A D B
 ```
 
-برای destructing  در آرایه نباید از کوتیشن استفاده کرد
- اگر تعداد متغیر ها از تعداد اعضای آرایه کمتر باشه فقط تا اون مقداری که اختصاص میده آرایه پیمایش میشه
-اگر تعداد متغیر ها از تعداد اعضای آرایه بیشتر باشه به اون متغیر اضافه undefined اختصاص داده میشه
+برای destructing  در آرایه نباید از کوتیشن استفاده کرد <br>
+اگر تعداد متغیر ها از تعداد اعضای آرایه کمتر باشه فقط تا اون مقداری که اختصاص میده آرایه پیمایش میشه <br>
+اگر تعداد متغیر ها از تعداد اعضای آرایه بیشتر باشه به اون متغیر اضافه undefined اختصاص داده میشه <br>
 
 Example 2
 ```javascript
-const peoples = ["Raha", "Shahriar", "Toranj", "Taranom"];
-const [first, , ...rest] = peoples;
+const people = ["Raha", "Shahriar", "Toranj", "Taranom"];
+const [first, , ...rest] = people;
 
 console.log(rest);
 
@@ -30,7 +30,7 @@ console.log(rest);
 // [ 'Toranj', 'Taranom' ]
 
 
-const [mylove, ...rest,item] = peoples;
+const [first, ...rest,item] = people;
 console.log(rest)
 
 // Output
