@@ -55,10 +55,15 @@ console.log(short);
 ```
 
 ### Object_Destructing
+تجزیه ساده شیء: در مثال زیر، ویژگی‌ها (و مقادیر آنها) از یک شیء (Object) به متغیرها اختصاص داده می‌شوند.
 Example 1
-// let myob = { x: 21, y: 40, t: 50 };
-// const { x, y, t } = myob;
-// console.log(t);
+let myob = { x: 21, y: 40, t: 50 };
+const { x, y, t } = myob;
+console.log(t);
+//Output :
+//50
+
+دقت کنید که نام متغیر جدید با نام کلید هر ویژگی آبجکت یکسان باشه
 
 // Example 2
 // const [a, b] = ["Raha", "Abolfazl"];
