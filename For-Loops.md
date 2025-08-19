@@ -84,3 +84,16 @@ for (let item in objToArray){
 }
 
 ```
+### Nested Array
+برنامه ای بنویسید که در آرایه `nestedArr` پنج آرایه دیگر قرار دهد و داخل هر آرایه متن `[num]loop` قرار گرفته باشد و به جای num عدد آن آرایه قرار گیرد همچنین در خانه بعدی فرزندان اندیس همان آرایه تکرار شود مثل این [loop3,3]
+
+```javascript
+const nestedArr = [];
+// ADD CODE HERE
+for(let i = 0;i< 5;i++){
+  nestedArr.push(['loop'+i,i])
+}
+
+console.log(nestedArr)
+
+```
