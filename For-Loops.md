@@ -13,3 +13,28 @@ for(let i = 0; i<=2;i++){
 console.log(bios)
 
 ```
+
+
+## For..in
+
+
+مثال: برنامه ای بنویسید که یک آبجکت را پیمایش کند اگر کلیدی با نام `foundNum` وجود داشت مقدار متغیر `found` را به ۱ تغییر دهد
+
+
+```javascript
+const checkObj = {
+  oddNum: 1,
+  evenNum: 2,
+  foundNum: 5,
+  randomNum: 18
+};
+
+let found = 0;
+// ADD CODE HERE
+for(let item in checkObj){
+  if(item == 'foundNum'){
+    found = 1
+  }
+}
+
+```
