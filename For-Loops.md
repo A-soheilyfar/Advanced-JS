@@ -61,3 +61,26 @@ for(let item in checkObj){
 
 console.log(objToArray)
 ```
+### Object.value()
+
+مثال : برنامه ای بنویسید تا تمام مقادیر آبجکت `checkObj` را در آرایه `objToArray` ذخیره کند سپس اگر هر کدام از اعضا بر ۶ بخش پذیر بود مقدار divBy6 را به true تغییر دهد (توجه کنید که با از ()Object.value برای مقادیر استفاده کنید
+
+
+```javascript
+const checkObj = {
+  oddNum: 1,
+  evenNum: 2,
+  foundNum: 5,
+  randomNum: 18
+};
+
+let divBy6 = false;
+// ADD CODE HERE
+const objToArray = Object.values(checkObj)
+for (let item in objToArray){
+ if (item % 6 ==0){
+   divBy6 = true
+ } 
+}
+
+```
