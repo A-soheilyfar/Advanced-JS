@@ -38,3 +38,26 @@ for(let item in checkObj){
 }
 
 ```
+
+برنامه ای بنویسید که آبجکت `checkObj` را پیمایش کرده و اگر مقادیر هر آیتم بیشتر یا مساوی ۲ بود آن مقدار را در آرایه `objToArr` ذخیره نماید
+
+```javascript
+
+const checkObj = {
+  oddNum: 1,
+  evenNum: 2,
+  foundNum: 5,
+  randomNum: 18
+};
+
+const objToArray = [];
+// ADD CODE HERE
+for(let item in checkObj){
+
+  if(checkObj[item]>=2){
+  objToArray.push(checkObj[item])
+    }
+}
+
+console.log(objToArray)
+```
