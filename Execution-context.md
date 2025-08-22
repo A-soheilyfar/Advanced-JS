@@ -39,4 +39,31 @@
 
 * زمانی که کد داخل eval() اجرا می‌شود
 
+```javascript
+
+var globalVar = 'I am a global variable';
+
+function myFunction() {
+    var localVar = 'i am a local variable';
+    console.log(globalVar); // قابل دسترس
+    console.log(localVar);  // قابل دسترس
+}
+
+myFunction();
+// console.log(localVar); // خطا - قابل دسترس نیست
+
+```
+درک execution context برای فهم نحوه کار scope، hoisting، و closure ها در برنامه‌نویسی بسیار مهم است.
+
+
+##### بیایید execution context را مثل یک اتاق کار تصور کنیم 🏠
+* مثال ساده از زندگی روزمره
+فکر کنید شما در خانه‌تان چندین اتاق دارید:
+
+سالن مشترک (مثل Global Context)  
+اتاق کار شخصی (مثل Function Context)  
+
 </div>
+
+
+
