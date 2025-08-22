@@ -93,6 +93,93 @@ function motherOffice() {
 مرحله 1: Creation Phase (مرحله آماده‌سازی)
 
 
+```javascript
+
+function goShopping() {
+    console.log(shoppingList); // undefined (not error!)
+    console.log(money); // undefined
+    
+    var shoppingList = ["bread", "milk", "eggs"];
+    var money = 100;
+}
+
+```
+##### چه اتفاقی می‌افتد؟
+
+* جاوااسکریپت ابتدا تمام متغیرها را پیدا می‌کند
+* جا برایشان رزرو می‌کند ولی مقدار undefined می‌دهد
+* بعد کد را خط به خط اجرا می‌کند
+
+### مرحله 2: Execution Phase (مرحله اجرا)
+```javascript
+
+function goShopping() {
+    console.log(shoppingList); // undefined
+    
+    var shoppingList = ["bread", "milk", "eggs"];
+    console.log(shoppingList); // ["bread", "milk", "eggs"]
+    
+    var money = 100;
+    console.log(money); // 100
+}
+
+```
+
+مثال کاملتر با Call Stack
+```javascript
+// Global environment (like house living room)
+var userName = "Mike";
+
+function makeBreakfast() {
+    var ingredients = ["eggs", "bread"];
+    
+    function fryEggs() {
+        var oil = "little";
+        var heat = "medium";
+        
+        console.log("Making eggs for: " + userName); // From living room
+        console.log("Ingredients: " + ingredients); // From parent function
+        console.log("Oil: " + oil); // From this function
+        
+        return "Eggs ready!";
+    }
+    
+    var result = fryEggs();
+    return result;
+}
+
+// Execute
+console.log(makeBreakfast());
+```
+
+Call Stack چگونه کار می‌کند؟
+
+تصور کنید یک پشته بشقاب دارید:
+
+```javascript
+
+
+Step 1: Program starts
+[Global Context] ← at bottom
+
+Step 2: makeBreakfast() is called
+[Function: makeBreakfast]
+[Global Context]
+
+Step 3: fryEggs() is called  
+[Function: fryEggs] ← at top
+[Function: makeBreakfast]
+[Global Context]
+
+Step 4: fryEggs() finishes
+[Function: makeBreakfast] ← returns to top
+[Global Context]
+
+Step 5: makeBreakfast() finishes
+[Global Context] ← only this remains
+
+
+```
 </div>
 
 
