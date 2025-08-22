@@ -180,6 +180,109 @@ Step 5: makeBreakfast() finishes
 
 
 ```
+
+### Another Practical Example
+
+
+```javascript
+
+var companyName = "TechCorp";
+var budget = 10000;
+
+function developApp() {
+    var projectName = "Mobile App";
+    var developers = ["Alice", "Bob"];
+    
+    function writeCode() {
+        var linesOfCode = 0;
+        var bugs = [];
+        
+        function fixBug(bugName) {
+            var fixTime = "2 hours";
+            console.log("Fixing: " + bugName);
+            console.log("Project: " + projectName); // Can access
+            console.log("Company: " + companyName); // Can access
+            console.log("Fix time: " + fixTime); // Can access
+            bugs.push(bugName + " - fixed");
+        }
+        
+        // Simulate finding bugs
+        fixBug("Login error");
+        fixBug("Database connection");
+        
+        linesOfCode = 1000;
+        return "Code completed with " + bugs.length + " bugs fixed";
+    }
+    
+    var codeResult = writeCode();
+    console.log(codeResult);
+    return projectName + " development completed";
+}
+
+// Execute the development process
+var finalResult = developApp();
+console.log(finalResult);
+console.log("Total budget: " + budget);
+```
+
+### Variable Access Rules
+
+```javascript
+var globalVar = "I'm global";
+
+function outerFunction() {
+    var outerVar = "I'm outer";
+    
+    function innerFunction() {
+        var innerVar = "I'm inner";
+        
+        console.log(globalVar); // ✅ Can access
+        console.log(outerVar);  // ✅ Can access  
+        console.log(innerVar);  // ✅ Can access
+    }
+    
+    innerFunction();
+    
+    console.log(globalVar); // ✅ Can access
+    console.log(outerVar);  // ✅ Can access
+    // console.log(innerVar); // ❌ Cannot access - ReferenceError
+}
+
+outerFunction();
+console.log(globalVar); // ✅ Can access
+// console.log(outerVar); // ❌ Cannot access - ReferenceErrorvar globalVar = "I'm global";
+
+function outerFunction() {
+    var outerVar = "I'm outer";
+    
+    function innerFunction() {
+        var innerVar = "I'm inner";
+        
+        console.log(globalVar); // ✅ Can access
+        console.log(outerVar);  // ✅ Can access  
+        console.log(innerVar);  // ✅ Can access
+    }
+    
+    innerFunction();
+    
+    console.log(globalVar); // ✅ Can access
+    console.log(outerVar);  // ✅ Can access
+    // console.log(innerVar); // ❌ Cannot access - ReferenceError
+}
+
+outerFunction();
+console.log(globalVar); // ✅ Can access
+// console.log(outerVar); // ❌ Cannot access - ReferenceError
+```
+نکات مهم:
+
+هر تابع اتاق جداگانه دارد - نمی‌توانند مستقیماً وسایل هم را ببینند
+سالن مشترک همه جا در دسترس است - متغیرهای global
+آخرین که وارد می‌شود، اولین که خارج می‌شود - مثل پشته بشقاب
+قبل از اجرا، همه چیز آماده می‌شود - hoisting
+
+این درک به شما کمک می‌کند بفهمید چرا گاهی متغیرها undefined هستند یا چرا بعضی متغیرها قابل دسترس نیستند!
+
 </div>
 
 
