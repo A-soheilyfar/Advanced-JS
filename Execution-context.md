@@ -63,6 +63,36 @@ myFunction();
 سالن مشترک (مثل Global Context)  
 اتاق کار شخصی (مثل Function Context)  
 
+```javascript
+
+// This is like the common living room - everyone can use it
+var familyName = "Smith";
+var address = "New York";
+
+function fatherOffice() {
+    // This is like father's office - only father works here
+    var workDocuments = "Engineering";
+    var currentProject = "Building website";
+    
+    console.log(familyName); // ✅ I can see it - from common room
+    console.log(workDocuments); // ✅ I can see it - in same room
+}
+
+function motherOffice() {
+    var workDocuments = "Medicine"; // Different from father's office!
+    var todayPatient = "John Doe";
+    
+    console.log(familyName); // ✅ From common room
+    console.log(todayPatient); // ✅ In same room
+    // console.log(currentProject); // ❌ Can't see - it's in father's office
+}
+```
+
+
+### مراحل ایجاد Execution Context
+مرحله 1: Creation Phase (مرحله آماده‌سازی)
+
+
 </div>
 
 
