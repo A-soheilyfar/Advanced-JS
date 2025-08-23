@@ -285,5 +285,138 @@ console.log(globalVar); // ✅ Can access
 
 </div>
 
+---
 
+<div dir="rtl"> 
+  
+## Call Stack مثل چیست؟
+
+مثال 1: پشته کتاب 📚  
+وقتی کتاب روی هم می‌چینید:
+- آخرین کتابی که می‌گذارید، اولین کتابی است که برمی‌دارید
+- نمی‌توانید کتاب وسطی را بدون برداشتن بالایی‌ها بردارید
+
+مثال 2: پشته ظرف 🍽️  
+  وقتی ظرف تمیز روی هم می‌چینید:
+- آخرین ظرف = اولین ظرف برای استفاده
+- باید از بالا شروع کنید
+
+در برنامه‌نویسی:
+```javascript
+
+var name = "John";
+
+function first() {
+    console.log("Starting first function");
+    second(); // فراخوانی تابع دوم
+    console.log("Ending first function");
+}
+
+function second() {
+    console.log("Starting second function");
+    third(); // فراخوانی تابع سوم
+    console.log("Ending second function");
+}
+
+function third() {
+    console.log("Starting third function");
+    console.log("Ending third function");
+}
+
+first(); // شروع
+
+```
+
+Call Stack به این شکل عمل می‌کند:
+
+```bash
+Step 1: first() فراخوانی می‌شود
+[first] ← بالا
+[Global] ← پایین
+
+Step 2: second() فراخوانی می‌شود
+[second] ← بالا (جدیدترین)
+[first]
+[Global] ← پایین
+
+Step 3: third() فراخوانی می‌شود
+[third] ← بالا (جدیدترین)
+[second]
+[first]
+[Global] ← پایین
+
+Step 4: third() تمام شد - حذف می‌شود
+[second] ← حالا بالا
+[first]
+[Global]
+
+Step 5: second() تمام شد - حذف می‌شود
+[first] ← حالا بالا
+[Global]
+
+Step 6: first() تمام شد - حذف می‌شود
+[Global] ← فقط این باقی می‌ماند
+```
+
+خروجی:
+```bash
+Starting first function
+Starting second function
+Starting third function
+Ending third function
+Ending second function
+Ending first function
+```
+
+مثال بهتر - مثل آشپزخانه:
+```javascript
+
+function cookDinner() {
+    console.log("Start cooking dinner");
+    
+    function boilWater() {
+        console.log("Start boiling water");
+        console.log("Water is ready");
+    }
+    
+    function cookRice() {
+        console.log("Start cooking rice");
+        boilWater(); // نیاز به آب جوش
+        console.log("Rice is ready");
+    }
+    
+    function prepareSalad() {
+        console.log("Start preparing salad");
+        console.log("Salad is ready");
+    }
+    
+    cookRice();
+    prepareSalad();
+    console.log("Dinner is ready!");
+}
+
+cookDinner();
+
+```
+
+Call Stack:
+
+```bash
+
+cookDinner starts
+  ↓ cookRice starts
+    ↓ boilWater starts
+    ↓ boilWater ends
+  ↓ cookRice ends
+  ↓ prepareSalad starts
+  ↓ prepareSalad ends
+↓ cookDinner ends
+```
+پس Call Stack = پشته فراخوانی یا انبار فراخوانی تابع‌ها  
+
+LIFO = Last In,  
+First Out = آخرین ورودی، اولین خروجی
+
+
+</div>
 
