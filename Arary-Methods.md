@@ -8,7 +8,7 @@
 - [Reduce](#-reduce)
 - [Slice](#-slice)
 - [Splice](#-splice)
-
+- [Includes](#-includes)
 
 
 
@@ -603,3 +603,117 @@ console.log(a);              // [1, 4]
 
 splice = دستکاری آرایه اصلی (حذف، اضافه، یا هر دو با هم)
 slice = برش آرایه و گرفتن نسخه جدید
+
+
+
+---
+
+## 🔵 includes
+<div dir="rtl">
+  
+
+متد includes در Array
+
+این متد بررسی می‌کنه که آیا یک مقدار خاص داخل آرایه وجود داره یا نه.
+نتیجه true یا false برمی‌گردونه.
+```javascript
+
+array.includes(valueToFind, fromIndex)
+
+```
+valueToFind: مقداری که می‌خوای بررسی کنی.
+
+fromIndex (اختیاری): از کدوم ایندکس شروع به جستجو کنه (پیش‌فرض 0).
+
+```javascript
+const fruits = ["apple", "banana", "mango", "orange"];
+
+console.log(fruits.includes("banana")); // true
+console.log(fruits.includes("grape"));  // false
+
+```
+
+```javascript
+const numbers = [1, 2, 3, 4, 5, 3];
+
+console.log(numbers.includes(3));       // true
+console.log(numbers.includes(3, 4));    // true (چون بعد از ایندکس 4، مقدار 3 وجود داره)
+console.log(numbers.includes(3, 5));    // true
+console.log(numbers.includes(3, 6));    // false
+
+```
+
+
+متد includes در String
+
+برای رشته‌ها هم قابل استفاده‌ست. بررسی می‌کنه که آیا رشته شامل زیررشته‌ی خاصی هست یا نه.
+
+سینتکس:
+```javascript
+string.includes(searchString, position)
+
+
+```
+searchString: متنی که می‌خوای بررسی کنی.
+
+position (اختیاری): از کجا شروع به جستجو کنه (پیش‌فرض 0).
+
+```javascript
+const text = "JavaScript is awesome!";
+
+console.log(text.includes("Java"));   // true
+console.log(text.includes("script")); // false (case-sensitive)
+
+```
+
+
+
+
+تفاوت includes با indexOf
+
+includes خیلی خواناتر و مستقیم‌تره چون فقط true/false برمی‌گردونه.
+
+indexOf اگر مقدار پیدا بشه، ایندکس رو برمی‌گردونه و اگر پیدا نشه -1.
+
+
+```javascript
+
+const animals = ["cat", "dog", "bird"];
+
+console.log(animals.includes("dog"));     // true
+console.log(animals.indexOf("dog") !== -1); // true (روش قدیمی‌تر)
+
+```
+روی آبجکت‌ها
+
+```javascript
+const users = [{id: 1}, {id: 2}];
+
+console.log(users.includes({id: 1})); // false (چون مقایسه بر اساس reference انجام می‌شه)
+
+```
+اینجا دو تا { id: 1 } داریم، اما چون آدرس حافظه‌شون فرق می‌کنه، مساوی در نظر گرفته نمی‌شن.
+
+
+برای این حالت باید از متدهای دیگه مثل some استفاده کنی:
+```javascript
+
+console.log(users.some(user => user.id === 1)); // true
+
+```
+
+وقتی کار می‌کنه
+
+اگر همون آبجکت قبلاً در آرایه باشه (و ما دقیقاً همون reference رو چک کنیم)، includes جواب میده
+```javascript
+const user1 = { id: 1 };
+const user2 = { id: 2 };
+const users = [user1, user2];
+
+console.log(users.includes(user1)); // true ✅
+console.log(users.includes({ id: 1 })); // false ❌
+
+```
+
+
+</div>
