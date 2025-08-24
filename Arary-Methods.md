@@ -715,6 +715,61 @@ console.log(users.includes(user1)); // true ✅
 console.log(users.includes({ id: 1 })); // false ❌
 
 ```
-
-
 </div>
+
+---
+
+## 🔵 Some
+* روی آرایه اجرا می‌شه.
+
+* بررسی می‌کنه که حداقل یک المان شرط داده‌شده رو داشته باشه.
+
+* خروجی: true/false
+  
+
+
+```javascript
+
+const numbers = [1, 2, 3, 4, 5];
+
+console.log(numbers.some(n => n > 3)); // true (چون 4 و 5 > 3 هستن)
+console.log(numbers.some(n => n > 10)); // false
+
+```
+
+
+روی آرایه‌ی آبجکت:
+```javascript
+const users = [{id: 1}, {id: 2}, {id: 3}];
+
+console.log(users.some(user => user.id === 2)); // true
+console.log(users.some(user => user.id === 5)); // false
+
+```
+
+## 🔵 Find
+روی آرایه اجرا می‌شه.
+
+اولین المان آرایه که شرط رو داشته باشه برمی‌گردونه.
+
+اگر چیزی پیدا نشه، undefined برمی‌گردونه.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+console.log(numbers.find(n => n > 3)); // 4 (اولین عددی که >3 هست)
+console.log(numbers.find(n => n > 10)); // undefined
+
+```
+روی آرایه‌ی آبجکت:
+```javascript
+const users = [{id: 1}, {id: 2}, {id: 3}];
+
+console.log(users.find(user => user.id === 2)); 
+// {id: 2}
+
+console.log(users.find(user => user.id === 5)); 
+// undefined
+
+```
+
