@@ -9,7 +9,8 @@
 - [Slice](#-slice)
 - [Splice](#-splice)
 - [Includes](#-includes)
-
+- [Some](#-some)
+- [Find](#-find)
 
 
 ## 🔵 foreach
