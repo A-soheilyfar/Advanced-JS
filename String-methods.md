@@ -1,0 +1,4 @@
+charCodeAt()
+charAt()
+concat()
+endsWith()
